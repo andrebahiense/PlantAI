@@ -1,1 +1,4 @@
 # PlantAI
+A proposta consiste em uma obra sonora, visual e interativa que proporciona um contato sensorial entre a planta, objeto da produção e interagente, através da alteração de parâmetros luminos pela emoção do indivíduo e a composição e reprodução em tempo real de uma música controlada pelo toque na planta. O sistema será constituído de um conjunto de uma câmera e computador equipado com um algoritmo de Inteligência Artificial para identificação e processamento das emoções, uma planta para a interação com o usuário e o próprio sistema e um Arduino para o controle de sensores e atuadores, responsáveis pelas ações sensoriais.
+
+Este repositório contém o código utilizado apenas no Arduino, sendo a parte sensorial através da interação de capacitância entre corpo e planta e o processamento, transformação e envio de dados pela porta serial, utilizando o protocolo MIDI e o Hairless MIDi, uma porta virtual.

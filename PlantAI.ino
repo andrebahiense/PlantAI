@@ -4,7 +4,8 @@ CapacitiveSensor sensor = CapacitiveSensor(9,8); // Sinal = 9 / Sensor = 11
 int velocity = 100;
 int noteON = 144;
 int noteOFF = 128;
-//int pitchBend = 
+int control = 176;
+int pitchBend = 224; 
 
 void setup() {
   Serial.begin(115200);
@@ -14,8 +15,16 @@ void setup() {
 void loop() {
   //long x = x - 0.3*(x-sensor.capacitiveSensorRaw(40));
   long x = sensor.capacitiveSensorRaw(40);
-
-
+  
+  // Teste com Pitch Bend
+  /*delay(5000);
+  MIDImessage(noteON, 40, 127);
+  delay(2000);
+  MIDImessage(pitchBend, 127, 127);
+  delay(2000);
+  MIDImessage(pitchBend, 0, 0);
+  delay(2000);
+  MIDImessage(noteOFF, 40, 127);*/
 
   if(x>=15000 && x<20000){
     MIDImessage(noteON, 60, 127);
@@ -49,9 +58,9 @@ void loop() {
   }    
 }
 
-void MIDImessage(int command, int MIDInote, int MIDIvelocity) {
-  Serial.write(command);//send note on or note off command 
-  Serial.write(MIDInote);//send pitch data
-  Serial.write(MIDIvelocity);//send velocity data
+void MIDImessage(int command, int byteDois, int byteTres) {
+  Serial.write(command);
+  Serial.write(byteDois);
+  Serial.write(byteTres);
 }
   

@@ -25,7 +25,8 @@ void loop() {
   MIDImessage(pitchBend, 0, 0);
   delay(2000);
   MIDImessage(noteOFF, 40, 127);*/
-
+  
+// Rotina baseada na leitura dos sensores da planta
   if(x>=15000 && x<20000){
     MIDImessage(noteON, 60, 127);
     if(x>=10000 && x<20000){
